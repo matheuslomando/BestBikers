@@ -1,0 +1,26 @@
+﻿@model List<BestBikers.Entidades.Model.Moto>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+    @foreach (var moto in Model)
+    {
+        <div style="margin: 20px;" class="col-xs-3">
+            <div>
+                <span>Marca:</span>
+                <span> @moto.Marca </span>
+
+                <span>
+                    <img  style="height: 200px; width:200px" src="@moto.UrlFoto" />
+                </span>
+
+            </div>
+        </div>
+    }
+</div>
+
+
+

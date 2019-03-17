@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Best Bikers", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Início", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>*@
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+
+        <div class="col-xs-2">
+            <h1>Menu</h1>
+            <div class="list-group">
+                <a href="@Url.Action("Honda","Review")" class="list-group-item list-group-item-action">Review/Honda</a>
+                <a href="@Url.Action("Index","CriarMoto")" class="list-group-item list-group-item-action">Criar Moto</a>
+                <a href="@Url.Action("Index","Review")" class="list-group-item list-group-item-action">Reviews</a>
+            </div>
+        </div>
+
+        <div class="col-xs-9 col-sm-offset-1">
+            @RenderBody()
+        </div>
+
+        <div class="row">
+
+        </div>
+
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
+        </footer>
+    </div>
+
+  
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

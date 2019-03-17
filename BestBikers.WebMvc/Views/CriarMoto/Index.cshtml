@@ -1,0 +1,72 @@
+﻿@model  BestBikers.Entidades.Model.Moto
+
+<h1>
+    Crie o seu review aqui
+</h1>
+
+<form method="post">
+
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Marca</span>
+        @*<input type="text" class="form-control" aria-describedby="basic-addon1" name="Marca" id="Marca">*@
+
+        @Html.TextBoxFor(x => x.Marca, null, new { @class = "form-control" })
+
+    </div>
+
+    <br />
+
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Modelo</span>
+        @Html.TextBoxFor(x => x.Modelo, null, new { @class = "form-control" })
+    </div>
+
+    <br />
+
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">URLfoto</span>
+        @Html.TextBoxFor(x => x.UrlFoto, null, new { @class = "form-control" })
+    </div>
+
+    <br />
+
+
+    <button type="submit">
+        Enviar Formulário
+    </button>
+
+</form>
+
+<div>
+    <h2>O formulário é</h2>
+
+    <div>
+        <span>Marca: </span>
+        @Html.DisplayTextFor(x => x.Marca)
+    </div>
+
+    <br />
+
+    <div>
+        <span>Modelo: </span>
+        @Html.DisplayTextFor(x => x.Modelo)
+    </div>
+
+    <br />
+
+    <div>
+        <span>UrlFoto: </span>
+        @Html.DisplayTextFor(x => x.UrlFoto)
+    </div>
+</div>
+
+@*<script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#Marca").val("Yamaha");
+
+        });
+    </script>*@
+
+
